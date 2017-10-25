@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/matheusmello/Development/Projects/IMEApp/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1dc15f3a744d5dc30b1258f7778965539780b36">
+        <dex dex="/Users/matheusmello/Development/Projects/IMEApp/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_a880a93c0f0e4b998bf7053fa6b3b2218b5d28e1.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,15 @@
+.mybutton {
+  margin: auto;
+  padding: 2vh;
+}
+
+.ouritem {
+  margin: 8% 5% 8% 5%;
+  text-align: left;
+}
+
+.input-label {
+  min-font-size: smaller;
+  font-size: 4.5vw;
+  max-font-size: normal;
+}
