@@ -22,13 +22,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
+.config(function($ionicConfigProvider) {
+    // Remove back button text completely
+    $ionicConfigProvider.backButton.previousTitleText(false).text('');
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-
-    // .state('home', {
-    //   url: '/home',
-    //   templateUrl: 'templates/home.html'
-    // })
 
     .state('app', {
     url: '/app',
@@ -55,6 +55,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+  .state('app.iniciativas', {
+      url: '/iniciativas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/iniciativas.html'
+        }
+      }
+    })
+
+  .state('app.roboime', {
+      url: '/roboime',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/roboime.html',
+          controller: 'RoboIMECtrl'
+        }
+      }
+    })
+
     .state('app.sobre', {
       url: '/sobre',
       views: {
@@ -64,25 +83,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+    .state('app.faleconosco', {
+        url: '/faleconosco',
+        views: {
+            'menuContent': {
+              templateUrl: 'templates/faleconosco.html'
         }
       }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });

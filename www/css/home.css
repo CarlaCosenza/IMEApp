@@ -18,7 +18,7 @@ table {
   margin: auto;
   overflow-y: scroll;
   position: static;
-  width: 80%;
+  width: 90%;
 }
 
 td {
@@ -55,7 +55,7 @@ td {
 
 .iconimage {
   background-color: transparent;
-  font-size: 11.75vh;
+  font-size: 11.5vh;
   max-font-size: 100px;
 }
 

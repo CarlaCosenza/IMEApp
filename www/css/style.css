@@ -1,3 +1,12 @@
+.myback {
+  background-color: #ebebeb;
+  background-image: url("../img/rodadentada.png");
+  background-repeat: no-repeat;
+  background-size: 80vw;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
 .bar  .title{
   font-size: 7vw;
   text-shadow: 1px 0px 0px #a9271b,
@@ -7,15 +16,21 @@
   max-font-size: 20px;
 }
 
-.ourbar {
-  background-color: #021f54;
-}
-
 .mytitle {
   background-color: #021f54;
   background-image: none;
   color: #fff8f8;
   font-family: 'Graduate', sans-serif;
+}
+
+.rodadentada {
+  position: absolute;
+  margin: 0px;
+  right: 0;
+}
+
+.ourbar {
+  background-color: #021f54;
 }
 
 .icons {

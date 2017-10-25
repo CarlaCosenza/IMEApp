@@ -11,7 +11,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
@@ -20,6 +20,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
   });
+})
+
+.config(function($ionicConfigProvider) {
+    // Remove back button text completely
+    $ionicConfigProvider.backButton.previousTitleText(false).text('');
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -32,42 +37,59 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.home', {
+    url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/home.html'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.horarios', {
+      url: '/horarios',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/horarios.html'
         }
       }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+  .state('app.iniciativas', {
+      url: '/iniciativas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/iniciativas.html'
+        }
       }
-    }
-  });
+    })
+
+  .state('app.roboime', {
+      url: '/roboime',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/roboime.html'
+        }
+      }
+    })
+
+    .state('app.sobre', {
+      url: '/sobre',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/sobre.html'
+        }
+      }
+    })
+
+    .state('app.faleconosco', {
+        url: '/faleconosco',
+        views: {
+            'menuContent': {
+              templateUrl: 'templates/faleconosco.html'
+        }
+      }
+    });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
 });
