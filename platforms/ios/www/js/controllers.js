@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicHistory, $ionicSideMenuDelegate) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -22,6 +22,11 @@ angular.module('starter.controllers', [])
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
+  };
+
+  $scope.closeMenu = function() {
+      $ionicHistory.nextViewOptions({disableAnimate: true});
+      $ionicSideMenuDelegate.toggleRight();
   };
 
   // Open the login modal
