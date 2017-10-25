@@ -1,0 +1,23 @@
+italic {
+  font-style: italic;
+}
+
+.ourimg {
+  width: 85vw;
+  margin: auto;
+}
+
+.ourtext {
+  text-align: justify;
+}
+
+.ourtext2 {
+  color: #073694;
+  font-size: inherit;
+}
+
+.legend {
+  font-size: smaller;
+}
+
+
