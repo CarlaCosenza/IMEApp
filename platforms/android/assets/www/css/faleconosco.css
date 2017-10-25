@@ -1,0 +1,26 @@
+.mybutton {
+    margin: auto;
+    padding: 2vh;
+}
+
+.ouritem {
+    margin: 3%;
+}
+
+.textarea {
+    height: 30vh;
+    padding-top: 10px;
+}
+
+.home .scroll-content {
+    display: table !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin-top: auto;
+    text-align: center;
+}
+.home .scroll {
+    display: table-cell;
+    vertical-align: middle;
+}
+
