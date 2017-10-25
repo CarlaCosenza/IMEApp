@@ -35,18 +35,19 @@
     <name>appIME</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://172.16.33.42:8101" />
+    <content original-src="index.html" src="http://172.16.36.11:8100" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="http://172.16.33.42:8101" />
     <allow-navigation href="http://172.16.33.42:8100" />
+    <allow-navigation href="http://172.16.36.11:8100" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <icon src="resources/ios/icon/icon-small@3x.png" />
+    <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />
