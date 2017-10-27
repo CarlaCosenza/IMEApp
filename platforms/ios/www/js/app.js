@@ -88,7 +88,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: '/faleconosco',
         views: {
             'menuContent': {
-              templateUrl: 'templates/faleconosco.html'
+              templateUrl: 'templates/faleconosco.html',
+              controller: 'FaleConoscoCtrl'
         }
       }
     });

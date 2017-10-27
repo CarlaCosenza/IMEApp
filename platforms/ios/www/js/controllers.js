@@ -9,8 +9,6 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-   $
-
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -61,6 +59,27 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+    .controller('FaleConoscoCtrl', function($scope, $stateParams, $state, $ionicPopup) {
+        $scope.handleFormSubmit = handleFormSubmit;
+
+        window.alertForm = function () {
+            $ionicPopup.alert({
+                title: "Obrigado por nos contatar!",
+                template: "Entraremos em contato assim que possível!",
+                cssClass: 'animated bounceInDown',
+                buttons: [
+                    {
+                        text: 'Ok',
+                        type: 'button-outline button-positive',
+                        onTap: function () {
+                            window.location.reload();
+                        }
+                    }]
+            });
+        }
+
 })
 
 .controller('RoboIMECtrl', function ($scope,$ionicScrollDelegate,$location) {

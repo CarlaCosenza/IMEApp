@@ -1,20 +1,31 @@
 <ion-view view-title="Fale Conosco">
-    <ion-content class="myback" style="text-align: center">
-        <div class="list">
-            <label class="ouritem item item-input">
-                <input type="text" placeholder="Name">
-            </label>
-            <label class="ouritem item item-input">
-                <input type="text" placeholder="E-mail">
-            </label>
-            <label class="ouritem item item-input">
-                <textarea placeholder="Sugestões, críticas ou erros" class="textarea"></textarea>
-            </label>
+    <ion-content class="myback myback-faleconosco" style="text-align: center">
+        <form id="gform" method="POST" ng-submit="handleFormSubmit()">
+            <div class="list">
+                <label class="item item-input" for="name">
+                    <input id="name" name="name" type="text" placeholder="Nome"/>
+                </label>
+            </div>
+            <div class="list">
+                <label class="item item-input" for="email">
+                    <input id="email" name="email" type="email" placeholder="E-mail"/>
+                </label>
+            </div>
+            <div class="list">
+                <label class="item item-input" for="message">
+                    <textarea id="message" name="message" placeholder="Sugestões, críticas ou erros" class="textarea"></textarea>
+                </label>
+            </div>
+            <div>
+                <button class="button menu-content">
+                    <span>Enviar</span>
+                </button>
+            </div>
+        </form>
+
+        <div style="display:none;" id="thankyou_message">
+            <h4>Obrigado por entrar em contato conosco! Responderemos assim que possível!</h4>
         </div>
-        <div>
-            <button class="button menu-content">
-                <span>Enviar</span>
-            </button>
-        </div>
+
     </ion-content>
 </ion-view>
