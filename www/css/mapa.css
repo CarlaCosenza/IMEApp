@@ -1,0 +1,19 @@
+.andar {
+    margin: 8% 5% 8% 5%;
+    text-align: left;
+}
+
+.bottom-andar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.mapa {
+    height: 95vh;
+}
+
+.myback-mapa{
+    height: 95vh;
+    position: relative;
+}

@@ -73,8 +73,6 @@ angular.module('starter.controllers', [])
             'src' : 'img/QTS/2CGBas.png'
         }];
 
-        $scope.zoomMin = 1;
-
         $scope.showImages = function() {
 
             var num = $scope.ano + $scope.turma + $scope.engenharia;
@@ -108,5 +106,46 @@ angular.module('starter.controllers', [])
             $scope.modal.hide();
             $scope.modal.remove()
         };
+    })
+
+    .controller('MapaCtrl', function($scope, $filter) {
+
+        $scope.andares = [{
+            'id' : '1',
+            'src' : 'img/QTS/1ABas.png'
+        }, {
+            'id' : '2',
+            'src' : 'img/QTS/1BBas.png'
+        }, {
+            'id' : '3',
+            'src' : 'img/QTS/1CBas.png'
+        }, {
+            'id' : '4',
+            'src' : 'img/QTS/2ABas.png'
+        }, {
+            'id' : '5',
+            'src' : 'img/QTS/2BBas.png'
+        }, {
+            'id' : '6',
+            'src' : 'img/QTS/2CBas.png'
+        }, {
+            'id' : '7',
+            'src' : 'img/QTS/2CGBas.png'
+        }];
+
+        $scope.myandar = $filter('filter')($scope.andares, {'id': $scope.andaratual});
+
+        console.log($scope.myandar["0"].src);
+
+        $scope.change = function () {
+
+            $scope.myandar = $filter('filter')($scope.andares, {'id': $scope.andaratual});
+
+            console.log($scope.myandar["0"].src);
+        }
+
+
     });
+
+
 
