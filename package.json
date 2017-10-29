@@ -31,9 +31,13 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {}
-        }
+        },
+        "platforms": [
+            "ios"
+        ]
     },
     "dependencies": {
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-splashscreen": "~4.0.1",
         "cordova-plugin-statusbar": "2.2.1",

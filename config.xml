@@ -10,6 +10,8 @@
   <allow-navigation href="http://172.16.33.42:8100"/>
   <allow-navigation href="http://172.16.36.11:8100"/>
   <allow-navigation href="http://172.16.33.42:8102"/>
+  <allow-navigation href="http://172.16.33.42:8103"/>
+  <allow-navigation href="http://172.16.33.42:8104"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
@@ -75,6 +77,7 @@
     <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320"/>
   </platform>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
+  <engine name="ios" spec="^4.4.0"/>
   <plugin name="cordova-plugin-device" spec="1.1.4"/>
   <plugin name="cordova-plugin-splashscreen" spec="~4.0.1"/>
   <plugin name="cordova-plugin-statusbar" spec="2.2.1"/>

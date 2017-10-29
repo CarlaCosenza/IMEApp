@@ -5,13 +5,13 @@
       <div class="input-label">
         Ano
       </div>
-      <select>
+      <select ng-model="$parent.ano">
         <option selected></option>
-        <option>1º ano</option>
-        <option>2º ano</option>
-        <option>3º ano</option>
-        <option>4º ano</option>
-        <option>5º ano</option>
+        <option value="1">1º ano</option>
+        <option value="2">2º ano</option>
+        <option value="3">3º ano</option>
+        <option value="4">4º ano</option>
+        <option value="5">5º ano</option>
       </select>
     </label>
     <label class="item item-input item-select ouritem">
@@ -19,11 +19,13 @@
         Turma
       </div>
 
-      <select>
+      <select ng-model="$parent.turma">
         <option selected></option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
+        <option value="1">A</option>
+        <option value="2">B</option>
+        <option value="3">C</option>
+        <option value="4">Profissional</option>
+        <option value="5">CG</option>
       </select>
     </label>
     <label class="item item-input item-select ouritem">
@@ -31,23 +33,24 @@
           Engenharia
         </span>
 
-      <select>
+      <select ng-model="$parent.engenharia">
         <option selected></option>
-        <option>Fortificação e Construção</option>
-        <option>Elétrica</option>
-        <option>Eletrônica</option>
-        <option>Telecomunicações</option>
-        <option>Mecânica e de Armamento</option>
-        <option>Mecânica e de Automóveis</option>
-        <option>Materiais</option>
-        <option>Química</option>
-        <option>Cartografia</option>
-        <option>Computação</option>
+        <option value="a">Básico</option>
+        <option value="b">Fortificação e Construção</option>
+        <option value="c">Elétrica</option>
+        <option value="d">Eletrônica</option>
+        <option value="e">Telecomunicações</option>
+        <option value="f">Mecânica e de Armamento</option>
+        <option value="g">Mecânica e de Automóveis</option>
+        <option value="h">Materiais</option>
+        <option value="i">Química</option>
+        <option value="j">Cartografia</option>
+        <option value="k">Computação</option>
       </select>
     </label>
 
     <div>
-      <button class="button menu-content">
+      <button ng-click="showImages($index)" class="button menu-content">
         <span>OK</span>
       </button>
     </div>

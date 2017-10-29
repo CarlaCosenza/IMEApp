@@ -55,7 +55,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/horarios',
       views: {
         'menuContent': {
-          templateUrl: 'templates/horarios.html'
+          templateUrl: 'templates/horarios.html',
+          controller: 'MediaCtrl'
         }
       }
     })

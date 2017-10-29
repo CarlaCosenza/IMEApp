@@ -46,4 +46,71 @@ angular.module('starter.controllers', [])
         var handle = $ionicScrollDelegate.$getByHandle('roboimeDelegate');
         handle.anchorScroll(true);  // 'true' for animation
     };
-});
+})
+
+    .controller('MediaCtrl', function($scope, $ionicModal, $filter) {
+
+        $scope.allImages = [{
+            'id' : '11a',
+            'src' : 'img/QTS/1ABas.png'
+        }, {
+            'id' : '12a',
+            'src' : 'img/QTS/1BBas.png'
+        }, {
+            'id' : '13a',
+            'src' : 'img/QTS/1CBas.png'
+        }, {
+            'id' : '21a',
+            'src' : 'img/QTS/2ABas.png'
+        }, {
+            'id' : '22a',
+            'src' : 'img/QTS/2BBas.png'
+        }, {
+            'id' : '23a',
+            'src' : 'img/QTS/2CBas.png'
+        }, {
+            'id' : '25a',
+            'src' : 'img/QTS/2CGBas.png'
+        }];
+
+        $scope.zoomMin = 1;
+
+        $scope.showImages = function() {
+
+            var num = $scope.ano + $scope.turma + $scope.engenharia;
+
+            console.log(num);
+
+            $scope.myimage = $filter('filter')($scope.allImages, {'id':num});
+
+            $scope.showModal('/templates/image-popover.html');
+
+            console.log($scope.myimage["0"].src);
+        };
+
+        $scope.showModal = function(templateUrl) {
+            $ionicModal.fromTemplateUrl(templateUrl, {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                $scope.modal = modal;
+                $scope.modal.show();
+            });
+        }
+
+        // Close the modal
+        $scope.closeModal = function() {
+            $scope.modal.hide();
+            $scope.modal.remove()
+        };
+
+        $scope.updateSlideStatus = function(slide) {
+            var zoomFactor = $ionicScrollDelegate.$getByHandle('scrollHandle' + slide).getScrollPosition().zoom;
+            if (zoomFactor == $scope.zoomMin) {
+                $ionicSlideBoxDelegate.enableSlide(true);
+            } else {
+                $ionicSlideBoxDelegate.enableSlide(false);
+            }
+        };
+    });
+
