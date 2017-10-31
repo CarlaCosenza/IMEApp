@@ -82,6 +82,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/sobre.html'
         }
       }
+    })  .state('app.escala', {
+      url: '/escala',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/escala.html'
+        }
+      }
     })
 
     .state('app.faleconosco', {
