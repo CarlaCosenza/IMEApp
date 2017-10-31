@@ -6,91 +6,108 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
-      cordova.plugins.Keyboard.disableScroll(true);
+    .run(function($ionicPlatform) {
+        $ionicPlatform.ready(function() {
+            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+            // for form inputs)
+            ionic.Platform.fullScreen(true, true);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-})
+            if (window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+                cordova.plugins.Keyboard.disableScroll(true);
 
-.config(function($ionicConfigProvider) {
-    // Remove back button text completely
-    $ionicConfigProvider.backButton.previousTitleText(false).text('');
-})
+            }
+            if (window.StatusBar) {
+                // org.apache.cordova.statusbar required
+                StatusBar.overlaysWebView(false);
+                StatusBar.backgroundColorByHexString('021f54');
+                StatusBar.styleLightContent();
 
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-    .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
-
-  .state('app.home', {
-    url: '/home',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/home.html'
-      }
-    }
-  })
-
-  .state('app.horarios', {
-      url: '/horarios',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/horarios.html'
-        }
-      }
+            }
+        });
     })
 
-  .state('app.iniciativas', {
-      url: '/iniciativas',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/iniciativas.html'
-        }
-      }
+    .config(function($ionicConfigProvider) {
+        // Remove back button text completely
+        $ionicConfigProvider.backButton.previousTitleText(false).text('');
     })
 
-  .state('app.roboime', {
-      url: '/roboime',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/roboime.html',
-          controller: 'RoboIMECtrl'
-        }
-      }
-    })
+    .config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
 
-    .state('app.sobre', {
-      url: '/sobre',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/sobre.html'
-        }
-      }
-    })
+            .state('app', {
+                url: '/app',
+                abstract: true,
+                templateUrl: 'templates/menu.html',
+                controller: 'AppCtrl'
+            })
 
-    .state('app.faleconosco', {
-        url: '/faleconosco',
-        views: {
-            'menuContent': {
-              templateUrl: 'templates/faleconosco.html'
-        }
-      }
+            .state('app.home', {
+                url: '/home',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/home.html'
+                    }
+                }
+            })
+
+            .state('app.horarios', {
+                url: '/horarios',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/horarios.html',
+                        controller: 'MediaCtrl'
+                    }
+                }
+            })
+
+            .state('app.mapa', {
+                url: '/mapa',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/mapa.html',
+                        controller: 'MapaCtrl'
+                    }
+                }
+            })
+
+            .state('app.iniciativas', {
+                url: '/iniciativas',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/iniciativas.html'
+                    }
+                }
+            })
+
+            .state('app.roboime', {
+                url: '/roboime',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/roboime.html',
+                        controller: 'RoboIMECtrl'
+                    }
+                }
+            })
+
+            .state('app.sobre', {
+                url: '/sobre',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/sobre.html'
+                    }
+                }
+            })
+
+            .state('app.faleconosco', {
+                url: '/faleconosco',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/faleconosco.html',
+                        controller: 'FaleConoscoCtrl'
+                    }
+                }
+            });
+        // if none of the above states are matched, use this as the fallback
+        $urlRouterProvider.otherwise('/app/home');
     });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
-});

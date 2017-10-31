@@ -16,6 +16,12 @@ angular.module('starter.controllers', [])
     })
 
 
+    .controller('HomeCtrl', function ($scope, $ionicSideMenuDelegate) {
+
+        $ionicSideMenuDelegate.canDragContent(false)
+
+    })
+
 
     .controller('FaleConoscoCtrl', function($scope, $stateParams, $state, $ionicPopup) {
         $scope.handleFormSubmit = handleFormSubmit;
@@ -81,7 +87,7 @@ angular.module('starter.controllers', [])
 
             $scope.myimage = $filter('filter')($scope.allImages, {'id':num});
 
-            $scope.showModal('/templates/image-popover.html');
+            $scope.showModal('templates/image-popover.html');
 
             console.log($scope.myimage["0"].src);
         };
@@ -146,6 +152,5 @@ angular.module('starter.controllers', [])
 
 
     });
-
 
 

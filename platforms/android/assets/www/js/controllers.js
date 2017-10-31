@@ -1,69 +1,151 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicHistory, $ionicSideMenuDelegate) {
+    .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicHistory, $ionicSideMenuDelegate) {
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+        // With the new view caching in Ionic, Controllers are only called
+        // when they are recreated or on app start, instead of every page change.
+        // To listen for when this page is active (for example, to refresh data),
+        // listen for the $ionicView.enter event:
+        //$scope.$on('$ionicView.enter', function(e) {
+        //});
 
-  // Form data for the login modal
-  $scope.loginData = {};
+        $scope.closeMenu = function() {
+            $ionicHistory.nextViewOptions({disableAnimate: true});
+            $ionicSideMenuDelegate.toggleRight();
+        };
+    })
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
 
-  $scope.closeMenu = function() {
-      $ionicHistory.nextViewOptions({disableAnimate: true});
-      $ionicSideMenuDelegate.toggleRight();
-  };
+    .controller('FaleConoscoCtrl', function($scope, $stateParams, $state, $ionicPopup) {
+        $scope.handleFormSubmit = handleFormSubmit;
 
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
+        window.alertForm = function () {
+            $ionicPopup.alert({
+                title: "Obrigado por nos contatar!",
+                template: "Entraremos em contato assim que possível!",
+                cssClass: 'animated bounceInDown',
+                buttons: [
+                    {
+                        text: 'Ok',
+                        type: 'button-outline button-positive',
+                        onTap: function () {
+                            $scope.name = '';
+                            $scope.email = '';
+                            $scope.message = '';
+                        }
+                    }]
+            });
+        }
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+    })
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
+    .controller('RoboIMECtrl', function ($scope,$ionicScrollDelegate,$location) {
+        $scope.scrollTo = function(target){
+            $location.hash(target);   //set the location hash
+            var handle = $ionicScrollDelegate.$getByHandle('roboimeDelegate');
+            handle.anchorScroll(true);  // 'true' for animation
+        };
+    })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
+    .controller('MediaCtrl', function($scope, $ionicModal, $filter) {
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
+        $scope.allImages = [{
+            'id' : '11a',
+            'src' : 'img/QTS/1ABas.png'
+        }, {
+            'id' : '12a',
+            'src' : 'img/QTS/1BBas.png'
+        }, {
+            'id' : '13a',
+            'src' : 'img/QTS/1CBas.png'
+        }, {
+            'id' : '21a',
+            'src' : 'img/QTS/2ABas.png'
+        }, {
+            'id' : '22a',
+            'src' : 'img/QTS/2BBas.png'
+        }, {
+            'id' : '23a',
+            'src' : 'img/QTS/2CBas.png'
+        }, {
+            'id' : '25a',
+            'src' : 'img/QTS/2CGBas.png'
+        }];
 
-.controller('RoboIMECtrl', function ($scope,$ionicScrollDelegate,$location) {
-    $scope.scrollTo = function(target){
-        $location.hash(target);   //set the location hash
-        var handle = $ionicScrollDelegate.$getByHandle('roboimeDelegate');
-        handle.anchorScroll(true);  // 'true' for animation
-    };
-});
+        $scope.showImages = function() {
+
+            var num = $scope.ano + $scope.turma + $scope.engenharia;
+
+            console.log(num);
+
+            $scope.myimage = $filter('filter')($scope.allImages, {'id':num});
+
+            $scope.showModal('templates/image-popover.html');
+
+            console.log($scope.myimage["0"].src);
+        };
+
+        $scope.showModal = function(templateUrl) {
+            $ionicModal.fromTemplateUrl(templateUrl, {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                $scope.modal = modal;
+                $scope.modal.show();
+            });
+
+            $scope.ano = 'selected';
+            $scope.turma = 'selected';
+            $scope.engenharia = 'selected';
+
+        };
+
+        // Close the modal
+        $scope.closeModal = function() {
+            $scope.modal.hide();
+            $scope.modal.remove()
+        };
+    })
+
+    .controller('MapaCtrl', function($scope, $filter) {
+
+        $scope.andares = [{
+            'id' : '1',
+            'src' : 'img/QTS/1ABas.png'
+        }, {
+            'id' : '2',
+            'src' : 'img/QTS/1BBas.png'
+        }, {
+            'id' : '3',
+            'src' : 'img/QTS/1CBas.png'
+        }, {
+            'id' : '4',
+            'src' : 'img/QTS/2ABas.png'
+        }, {
+            'id' : '5',
+            'src' : 'img/QTS/2BBas.png'
+        }, {
+            'id' : '6',
+            'src' : 'img/QTS/2CBas.png'
+        }, {
+            'id' : '7',
+            'src' : 'img/QTS/2CGBas.png'
+        }];
+
+        $scope.myandar = $filter('filter')($scope.andares, {'id': $scope.andaratual});
+
+        console.log($scope.myandar["0"].src);
+
+        $scope.change = function () {
+
+            $scope.myandar = $filter('filter')($scope.andares, {'id': $scope.andaratual});
+
+            console.log($scope.myandar["0"].src);
+        }
+
+
+    });
+
+
+
