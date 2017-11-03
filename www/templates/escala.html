@@ -1,0 +1,9 @@
+<ion-view view-title="Escala">
+    <ion-content class="myback" style="text-align: center">
+        <div class="mybutton">
+            <button class="item-avatar-left button button-light menu-content menu border" ng-repeat="n in teste1 | orderBy: 'Dia'" >
+                {{n.$id}} {{n.Dia}}
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

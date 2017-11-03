@@ -29,6 +29,20 @@
     <link href="css/mapa.css" rel="stylesheet">
 
 
+    <script src="lib/firebase/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDkf7WNAB2RL_9n1Z-EyeFNjSUybCMi4Ss",
+            authDomain: "imeapp-63d54.firebaseapp.com",
+            databaseURL: "https://imeapp-63d54.firebaseio.com",
+            projectId: "imeapp-63d54",
+            storageBucket: "imeapp-63d54.appspot.com",
+            messagingSenderId: "28598075163"
+        };
+        firebase.initializeApp(config);
+    </script>
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -43,6 +57,8 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/form-submission-handler.js"></script>
+    <script src="js/escala.js"></script>
+    <script src="lib/angularfire/dist/angularfire.min.js"></script>
 
 
   </head>
