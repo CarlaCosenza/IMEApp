@@ -1,0 +1,34 @@
+<ion-view view-title="índices do TAF">
+    <ion-content class="myback">
+        <label class="item item-input item-select ouritem">
+            <div class="input-label">
+                Ano
+            </div>
+            <select ng-model="$parent.semestre">
+                <option selected></option>
+                <option value="1" ui-sref="app.1_masc">1º ano</option>
+                <option value="2">2º ano</option>
+                <option value="3">3º ano</option>
+                <option value="4">4º ano</option>
+                <option value="5">5º ano</option>
+            </select>
+        </label>
+        <label class="item item-input item-select ouritem">
+            <div class="input-label">
+                Sexo
+            </div>
+
+            <select ng-model="$parent.sexo">
+                <option selected></option>
+                <option value="1">Feminino</option>
+                <option value="2">Masculino</option>
+            </select>
+        </label>
+
+        <div>
+            <button ng-click="showImages()" class="button menu-content">
+                <span>OK</span>
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

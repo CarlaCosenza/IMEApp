@@ -91,6 +91,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase'])
                 }
             })
 
+            .state('app.informaçoes', {
+                url: '/informaçoes',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/informaçoes.html'
+                    }
+                }
+            })
+
+            .state('app.taf', {
+                url: '/taf',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/taf.html'
+                    }
+                }
+            })
+
+ .state('app.1_masc', {
+                url: '/1_masc',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/1_masc.html'
+                    }
+                }
+            })
+
             .state('app.roboime', {
                 url: '/roboime',
                 views: {
