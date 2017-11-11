@@ -16,6 +16,12 @@ angular.module('starter.controllers', [])
     })
 
 
+    .controller('HomeCtrl', function ($scope, $ionicSideMenuDelegate) {
+
+        $ionicSideMenuDelegate.canDragContent(false)
+
+    })
+
 
     .controller('FaleConoscoCtrl', function($scope, $stateParams, $state, $ionicPopup) {
         $scope.handleFormSubmit = handleFormSubmit;
@@ -146,6 +152,5 @@ angular.module('starter.controllers', [])
 
 
     });
-
 
 

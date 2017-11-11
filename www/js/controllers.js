@@ -118,25 +118,25 @@ angular.module('starter.controllers', [])
 
         $scope.andares = [{
             'id' : '1',
-            'src' : 'img/QTS/1ABas.png'
+            'src' : 'img/Andares/andar1.png'
         }, {
             'id' : '2',
-            'src' : 'img/QTS/1BBas.png'
+            'src' : 'img/Andares/andar2.png'
         }, {
             'id' : '3',
-            'src' : 'img/QTS/1CBas.png'
+            'src' : 'img/Andares/andar3.png'
         }, {
             'id' : '4',
-            'src' : 'img/QTS/2ABas.png'
+            'src' : 'img/Andares/andar4.png'
         }, {
             'id' : '5',
-            'src' : 'img/QTS/2BBas.png'
+            'src' : 'img/Andares/andar5.png'
         }, {
             'id' : '6',
-            'src' : 'img/QTS/2CBas.png'
+            'src' : 'img/Andares/andar6.png'
         }, {
             'id' : '7',
-            'src' : 'img/QTS/2CGBas.png'
+            'src' : 'img/Andares/andar7.png'
         }];
 
         $scope.myandar = $filter('filter')($scope.andares, {'id': $scope.andaratual});
@@ -151,6 +151,32 @@ angular.module('starter.controllers', [])
         }
 
 
-    });
+    })
+
+    .controller('TAFController', function ($scope, $state, $stateParams, $filter) {
+
+        $scope.paginas = [{
+            'id' : '12',
+            'src' : 'app.1_masc'
+        }
+
+        ];
+
+        $scope.changePage = function() {
+
+            var pag = $scope.semestre + $scope.sexo;
+
+            $scope.mypage = $filter('filter')($scope.paginas, {'id':pag});
+
+            console.log($scope.mypage["0"].src)
+        };
+
+        $scope.goTo = function() {
+
+            $state.go($scope.mypage[0].src);
+            $scope.semestre = 'selected';
+            $scope.sexo = 'selected';
+        };
+});
 
 

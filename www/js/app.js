@@ -104,12 +104,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase'])
                 url: '/taf',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/taf.html'
+                        templateUrl: 'templates/taf.html',
+                        controller: 'TAFController'
                     }
                 }
             })
 
- .state('app.1_masc', {
+            .state('app.1_masc', {
                 url: '/1_masc',
                 views: {
                     'menuContent': {

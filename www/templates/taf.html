@@ -6,7 +6,7 @@
             </div>
             <select ng-model="$parent.semestre">
                 <option selected></option>
-                <option value="1" ui-sref="app.1_masc">1º ano</option>
+                <option value="1">1º ano</option>
                 <option value="2">2º ano</option>
                 <option value="3">3º ano</option>
                 <option value="4">4º ano</option>
@@ -18,7 +18,7 @@
                 Sexo
             </div>
 
-            <select ng-model="$parent.sexo">
+            <select ng-model="$parent.sexo" ng-change="changePage()">
                 <option selected></option>
                 <option value="1">Feminino</option>
                 <option value="2">Masculino</option>
@@ -26,7 +26,7 @@
         </label>
 
         <div>
-            <button ng-click="showImages()" class="button menu-content">
+            <button class="button menu-content" ng-click="goTo()">
                 <span>OK</span>
             </button>
         </div>

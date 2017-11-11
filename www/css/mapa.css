@@ -16,3 +16,7 @@
 .myback-mapa{
     position: relative;
 }
+
+.mybackmap {
+    background-image: none;
+}
