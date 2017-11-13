@@ -1,8 +1,8 @@
 <ion-view view-title="Escala">
     <ion-content class="myback" style="text-align: center">
         <div class="mybutton">
-            <button class="item-avatar-left button button-light menu-content menu border-escala" ng-repeat="n in teste1 | orderBy: 'Dia'" >
-                {{n.$id}} {{n.Dia}}
+            <button class="item-avatar-left button button-light menu-content menu border-escala" ng-repeat="dia in diasdaescala | orderBy: 'Dia'" ng-click="$scope.diaescolhido = dia.$id; escolherdia($scope.diaescolhido)" ui-sref="app.escaladia">
+                {{dia.$id}} {{dia.Dia}}
             </button>
         </div>
     </ion-content>

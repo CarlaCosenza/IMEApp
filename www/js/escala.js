@@ -7,14 +7,16 @@ angular.module('starter.controllers')
         var query = diasRef
             .child("Dias");
 
-        $scope.teste1 = $firebaseArray(query);
-        console.log($scope.teste1);
+        $scope.diaescolhido;
 
-        query.once('value').then(function (snap) {
-            console.log(snap.val());
-        });
+        $scope.diasdaescala = $firebaseArray(query);
+        console.log($scope.diasdaescala);
 
-        function teste(dia) {
+        //query.once('value').then(function (snap) {
+        //    console.log(snap.val());
+        //});
+
+        function teste(dias) {
             var query = diasRef
                 .child("Dias"/"Segunda"/"Dia");
             query.once('value').then(function (snap) {
@@ -30,6 +32,11 @@ angular.module('starter.controllers')
                 console.log(snap.val());
                 return snap.val();
             })
+        }
+
+        $scope.escolherdia = function(dia){
+            alert(dia);
+            $scope.diaescolhido = dia;
         }
 
     });

@@ -82,6 +82,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase'])
                 }
             })
 
+            .state('app.escaladia', {
+                url: '/escaladia',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/escaladia.html',
+                        controller: 'EscalaDiaCtrl'
+                    }
+                }
+            })
+
             .state('app.iniciativas', {
                 url: '/iniciativas',
                 views: {
